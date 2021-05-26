@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GenericApp.Infra.CC.Logging\GenericApp.Infra.CC.Logging.Serilog.csproj" />
+    <ProjectReference Include="..\GenericApp.Infra.Common\GenericApp.Infra.Common.csproj" />
+  </ItemGroup>
+
+</Project>

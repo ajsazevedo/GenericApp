@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GenericApp.Infra.CC.Exception\GenericApp.Infra.CC.Exceptions.csproj" />
+    <ProjectReference Include="..\GenericApp.Infra.CC.Logging\GenericApp.Infra.CC.Logging.Serilog.csproj" />
+    <ProjectReference Include="..\GenericApp.Infra.CC.Mapping\GenericApp.Infra.CC.Mapping.csproj" />
+    <ProjectReference Include="..\GenericApp.Infra.Common\GenericApp.Infra.Common.csproj" />
+    <ProjectReference Include="..\GenericApp.Infra.Data\GenericApp.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

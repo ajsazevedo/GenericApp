@@ -1,0 +1,594 @@
+2021-02-24 10:13:32.828 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-24 10:13:32.965 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/  
+2021-02-24 10:13:32.965 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/favicon.ico  
+2021-02-24 10:13:33.036 -03:00 [INF] Hosting environment: Development
+2021-02-24 10:13:33.037 -03:00 [INF] Content root path: D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp
+2021-02-24 10:13:59.347 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/favicon.ico  
+2021-02-24 10:13:59.347 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/favicon.ico  
+2021-02-24 10:13:59.347 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/favicon.ico  
+2021-02-24 10:13:59.466 -03:00 [INF] Request finished in 117.8745ms 404 
+2021-02-24 10:13:59.467 -03:00 [INF] Request finished in 117.8801ms 404 
+2021-02-24 10:13:59.466 -03:00 [INF] Request finished in 26508.5954ms 404 
+2021-02-24 10:13:59.466 -03:00 [INF] Request finished in 26508.6038ms 404 
+2021-02-24 10:13:59.466 -03:00 [INF] Request finished in 117.9052ms 404 
+2021-02-24 10:14:28.994 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-24 10:14:29.021 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/  
+2021-02-24 10:14:29.021 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/favicon.ico  
+2021-02-24 10:14:29.081 -03:00 [INF] Hosting environment: Development
+2021-02-24 10:14:29.082 -03:00 [INF] Content root path: D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp
+2021-02-24 10:14:29.126 -03:00 [INF] Request finished in 109.8453ms 0 
+2021-02-24 10:14:29.171 -03:00 [INF] Request finished in 156.3098ms 404 
+2021-02-24 10:16:21.597 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Add application/json 429
+2021-02-24 10:16:21.640 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Add (GenericApp)'
+2021-02-24 10:16:21.720 -03:00 [INF] Route matched with {action = "Add", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Add(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 10:16:39.856 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Add (GenericApp) in 18125.0834ms
+2021-02-24 10:16:39.861 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Add (GenericApp)'
+2021-02-24 10:16:41.604 -03:00 [ERR] Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.InvalidOperationException: The entity type 'Notification' requires a primary key to be defined. If you intended to use a keyless entity type call 'HasNoKey()'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at GenericApp.Infra.Data.Repositories.Base.BaseRepository`1..ctor(IUnitOfWork unitOfWork) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Infra.Data\Repositories\Base\BaseRepository.cs:line 22
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at GenericApp.Infra.Data.UnitOfWork`1.Repository[TEntity]() in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Infra.Data\UnitOfWork.cs:line 78
+   at GenericApp.Services.Base.BaseDbService`1..ctor(IUnitOfWork unitOfWork) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Services\Services\Base\BaseDbService.cs:line 19
+   at GenericApp.Services.EmployeeService..ctor(IUnitOfWork unitOfWork) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Services\Services\EmployeeService.cs:line 11
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at GenericApp.Infra.CC.Exceptions.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Infra.CC.Exception\Middleware\ExceptionMiddleware.cs:line 24
+2021-02-24 10:16:41.756 -03:00 [INF] Request finished in 20164.154ms 400 application/json
+2021-02-24 10:17:52.153 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Add application/json 429
+2021-02-24 10:17:52.157 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Add (GenericApp)'
+2021-02-24 10:17:52.158 -03:00 [INF] Route matched with {action = "Add", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Add(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 10:19:44.754 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-24 10:19:44.780 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/  
+2021-02-24 10:19:44.852 -03:00 [INF] Hosting environment: Development
+2021-02-24 10:19:44.852 -03:00 [INF] Content root path: D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp
+2021-02-24 10:19:44.920 -03:00 [INF] Request finished in 145.8046ms 404 
+2021-02-24 10:19:51.782 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Add application/json 429
+2021-02-24 10:19:51.804 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Add (GenericApp)'
+2021-02-24 10:19:51.888 -03:00 [INF] Route matched with {action = "Add", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Add(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 10:19:52.946 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 10:19:53.677 -03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2021-02-24 10:19:53.782 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Add (GenericApp) in 1886.5025ms
+2021-02-24 10:19:53.783 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Add (GenericApp)'
+2021-02-24 10:19:53.791 -03:00 [INF] Request finished in 2009.7152ms 400 application/problem+json; charset=utf-8
+2021-02-24 10:37:16.481 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Add application/json 479
+2021-02-24 10:37:16.487 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Add (GenericApp)'
+2021-02-24 10:37:16.490 -03:00 [INF] Route matched with {action = "Add", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Add(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 10:37:16.538 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 10:37:17.793 -03:00 [ERR] Failed executing DbCommand (101ms) [Parameters=[@__cnpj_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Active], [c].[Cnpj], [c].[CreatedAt], [c].[Creator], [c].[Email], [c].[Name], [c].[PhoneNumber], [c].[PublicName], [c].[UpdatedAt], [c].[Updater]
+FROM [Company] AS [c]
+WHERE [c].[Cnpj] = @__cnpj_0
+2021-02-24 10:37:17.858 -03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'GenericApp.Infra.Data.Context.GenericAppContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Company'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:0a9a5488-e8f3-4c12-b098-3a6ab5911391
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Company'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:0a9a5488-e8f3-4c12-b098-3a6ab5911391
+Error Number:208,State:1,Class:16
+2021-02-24 10:38:41.735 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Add (GenericApp) in 85243.7441ms
+2021-02-24 10:38:41.736 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Add (GenericApp)'
+2021-02-24 10:38:45.457 -03:00 [ERR] Invalid object name 'Company'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Company'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at GenericApp.Infra.Data.Repositories.Base.BaseRepository`1.Find(Expression`1 predicate) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Infra.Data\Repositories\Base\BaseRepository.cs:line 48
+   at GenericApp.Services.CompanyService.FindByCnpj(String cnpj) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Services\Services\CompanyService.cs:line 17
+   at GenericApp.Services.EmployeeService.CheckExistingCompany(Employee& employee) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Services\Services\EmployeeService.cs:line 28
+   at GenericApp.Services.EmployeeService.Add(Employee obj) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Services\Services\EmployeeService.cs:line 17
+   at GenericApp.Controllers.EmployeeController.Add(EmployeeVM employee) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp\Controllers\EmployeeController.cs:line 35
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at GenericApp.Infra.CC.Exceptions.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Infra.CC.Exception\Middleware\ExceptionMiddleware.cs:line 24
+ClientConnectionId:0a9a5488-e8f3-4c12-b098-3a6ab5911391
+Error Number:208,State:1,Class:16
+2021-02-24 10:38:45.542 -03:00 [INF] Request finished in 89061.7935ms 400 application/json
+2021-02-24 10:56:11.976 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-24 10:56:12.001 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/  
+2021-02-24 10:56:12.059 -03:00 [INF] Hosting environment: Development
+2021-02-24 10:56:12.060 -03:00 [INF] Content root path: D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp
+2021-02-24 10:56:12.120 -03:00 [INF] Request finished in 122.8917ms 404 
+2021-02-24 10:56:16.638 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Add application/json 479
+2021-02-24 10:56:16.659 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Add (GenericApp)'
+2021-02-24 10:56:16.748 -03:00 [INF] Route matched with {action = "Add", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Add(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 10:56:17.827 -03:00 [WRN] No type was specified for the decimal column 'Value' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-02-24 10:56:17.874 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 10:56:19.301 -03:00 [INF] Executed DbCommand (80ms) [Parameters=[@__cnpj_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT [j].[Id], [j].[Cnpj], [j].[CreatedAt], [j].[Creator], [j].[Discriminator], [j].[Email], [j].[Name], [j].[PhoneNumber], [j].[PublicName], [j].[UpdatedAt], [j].[Updater], [j].[Active]
+FROM [JuridicalPerson] AS [j]
+WHERE ([j].[Discriminator] = N'Company') AND ([j].[Cnpj] = @__cnpj_0)
+2021-02-24 10:56:19.358 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Cpf], [p].[CreatedAt], [p].[Creator], [p].[DateOfBirth], [p].[Discriminator], [p].[Email], [p].[FirstName], [p].[Gender], [p].[LastName], [p].[PhoneNumber], [p].[UpdatedAt], [p].[Updater], [p].[Active], [p].[Admission], [p].[Code], [p].[CompanyId], [p].[Position]
+FROM [Person] AS [p]
+WHERE ([p].[Discriminator] = N'Employee') AND ([p].[Cpf] = @__cpf_0)
+2021-02-24 10:56:19.701 -03:00 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (Size = 15), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 30), @p5='?' (Size = 40), @p6='?' (Size = 15), @p7='?' (Size = 40), @p8='?' (DbType = DateTime2), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [JuridicalPerson] ([Cnpj], [CreatedAt], [Creator], [Discriminator], [Email], [Name], [PhoneNumber], [PublicName], [UpdatedAt], [Updater], [Active])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [Id]
+FROM [JuridicalPerson]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-02-24 10:56:19.738 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p11='?' (Size = 11), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (Size = 30), @p17='?' (Size = 30), @p18='?' (DbType = Int32), @p19='?' (Size = 30), @p20='?' (Size = 15), @p21='?' (DbType = DateTime2), @p22='?' (Size = 4000), @p23='?' (DbType = Boolean), @p24='?' (DbType = DateTime2), @p25='?' (Size = 8), @p26='?' (DbType = Int64), @p27='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Person] ([Cpf], [CreatedAt], [Creator], [DateOfBirth], [Discriminator], [Email], [FirstName], [Gender], [LastName], [PhoneNumber], [UpdatedAt], [Updater], [Active], [Admission], [Code], [CompanyId], [Position])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27);
+SELECT [Id]
+FROM [Person]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-02-24 10:56:19.774 -03:00 [INF] Executing ObjectResult, writing value of type 'GenericApp.Domain.Models.Employee'.
+2021-02-24 10:56:19.869 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Add (GenericApp) in 3114.5737ms
+2021-02-24 10:56:19.869 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Add (GenericApp)'
+2021-02-24 10:56:19.877 -03:00 [INF] Request finished in 3239.1959ms 200 application/json; charset=utf-8
+2021-02-24 11:05:19.475 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-24 11:05:19.516 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/  
+2021-02-24 11:05:19.573 -03:00 [INF] Hosting environment: Development
+2021-02-24 11:05:19.574 -03:00 [INF] Content root path: D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp
+2021-02-24 11:05:19.638 -03:00 [INF] Request finished in 137.9689ms 404 
+2021-02-24 11:05:42.303 -03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44345/api/Employee/Delete?id=10008  
+2021-02-24 11:05:42.326 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Delete (GenericApp)'
+2021-02-24 11:05:42.404 -03:00 [INF] Route matched with {action = "Delete", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 11:05:43.560 -03:00 [WRN] No type was specified for the decimal column 'Value' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-02-24 11:05:43.621 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 11:05:44.896 -03:00 [INF] Executed DbCommand (72ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Cpf], [p].[CreatedAt], [p].[Creator], [p].[DateOfBirth], [p].[Discriminator], [p].[Email], [p].[FirstName], [p].[Gender], [p].[LastName], [p].[PhoneNumber], [p].[UpdatedAt], [p].[Updater], [p].[Active], [p].[Admission], [p].[Code], [p].[CompanyId], [p].[Position]
+FROM [Person] AS [p]
+WHERE ([p].[Discriminator] = N'Employee') AND ([p].[Id] = @__p_0)
+2021-02-24 11:05:45.249 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Person]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2021-02-24 11:05:45.274 -03:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2021-02-24 11:05:45.283 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Delete (GenericApp) in 2870.161ms
+2021-02-24 11:05:45.284 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Delete (GenericApp)'
+2021-02-24 11:05:45.292 -03:00 [INF] Request finished in 2992.2164ms 200 
+2021-02-24 11:05:51.555 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Add application/json 479
+2021-02-24 11:05:51.559 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Add (GenericApp)'
+2021-02-24 11:05:51.564 -03:00 [INF] Route matched with {action = "Add", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Add(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 11:05:51.607 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 11:05:51.947 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__cnpj_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT [j].[Id], [j].[Cnpj], [j].[CreatedAt], [j].[Creator], [j].[Discriminator], [j].[Email], [j].[Name], [j].[PhoneNumber], [j].[PublicName], [j].[UpdatedAt], [j].[Updater], [j].[Active]
+FROM [JuridicalPerson] AS [j]
+WHERE ([j].[Discriminator] = N'Company') AND ([j].[Cnpj] = @__cnpj_0)
+2021-02-24 11:05:51.964 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__cpf_0='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Cpf], [p].[CreatedAt], [p].[Creator], [p].[DateOfBirth], [p].[Discriminator], [p].[Email], [p].[FirstName], [p].[Gender], [p].[LastName], [p].[PhoneNumber], [p].[UpdatedAt], [p].[Updater], [p].[Active], [p].[Admission], [p].[Code], [p].[CompanyId], [p].[Position]
+FROM [Person] AS [p]
+WHERE ([p].[Discriminator] = N'Employee') AND ([p].[Cpf] = @__cpf_0)
+2021-02-24 11:05:52.062 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 11), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 30), @p6='?' (Size = 30), @p7='?' (DbType = Int32), @p8='?' (Size = 30), @p9='?' (Size = 15), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTime2), @p14='?' (Size = 8), @p15='?' (DbType = Int64), @p16='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Person] ([Cpf], [CreatedAt], [Creator], [DateOfBirth], [Discriminator], [Email], [FirstName], [Gender], [LastName], [PhoneNumber], [UpdatedAt], [Updater], [Active], [Admission], [Code], [CompanyId], [Position])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+SELECT [Id]
+FROM [Person]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-02-24 11:05:52.101 -03:00 [INF] Executing ObjectResult, writing value of type 'GenericApp.Domain.Models.Employee'.
+2021-02-24 11:05:52.187 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Add (GenericApp) in 623.1934ms
+2021-02-24 11:05:52.187 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Add (GenericApp)'
+2021-02-24 11:05:52.188 -03:00 [INF] Request finished in 632.9535ms 200 application/json; charset=utf-8
+2021-02-24 11:07:09.801 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Update text/plain 47
+2021-02-24 11:07:09.803 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:07:09.811 -03:00 [INF] Route matched with {action = "Update", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 11:07:09.831 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 11:07:09.834 -03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2021-02-24 11:07:09.856 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Update (GenericApp) in 44.4663ms
+2021-02-24 11:07:09.856 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:07:09.856 -03:00 [INF] Request finished in 61.0133ms 415 application/problem+json; charset=utf-8
+2021-02-24 11:07:24.865 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Update application/json 47
+2021-02-24 11:07:24.866 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:07:24.867 -03:00 [INF] Route matched with {action = "Update", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 11:07:24.868 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 11:07:24.882 -03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2021-02-24 11:07:24.907 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Update (GenericApp) in 40.0788ms
+2021-02-24 11:07:24.908 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:07:24.908 -03:00 [INF] Request finished in 43.3912ms 400 application/problem+json; charset=utf-8
+2021-02-24 11:07:47.475 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Update application/json 47
+2021-02-24 11:07:47.476 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:07:47.476 -03:00 [INF] Route matched with {action = "Update", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 11:07:47.477 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 11:07:47.480 -03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2021-02-24 11:07:47.481 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Update (GenericApp) in 4.7752ms
+2021-02-24 11:07:47.482 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:07:47.487 -03:00 [INF] Request finished in 12.5837ms 400 application/problem+json; charset=utf-8
+2021-02-24 11:08:13.344 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Update application/json 47
+2021-02-24 11:08:13.344 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:08:13.345 -03:00 [INF] Route matched with {action = "Update", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 11:08:13.351 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 11:08:18.824 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Cpf], [p].[CreatedAt], [p].[Creator], [p].[DateOfBirth], [p].[Discriminator], [p].[Email], [p].[FirstName], [p].[Gender], [p].[LastName], [p].[PhoneNumber], [p].[UpdatedAt], [p].[Updater], [p].[Active], [p].[Admission], [p].[Code], [p].[CompanyId], [p].[Position]
+FROM [Person] AS [p]
+WHERE ([p].[Discriminator] = N'Employee') AND ([p].[Id] = @__p_0)
+2021-02-24 11:08:18.844 -03:00 [ERR] Failed executing DbCommand (10ms) [Parameters=[@p15='?' (DbType = Int64), @p0='?' (Size = 11), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 30), @p5='?' (Size = 30), @p6='?' (DbType = Int32), @p7='?' (Size = 30), @p8='?' (Size = 15), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (DbType = DateTime2), @p13='?' (Size = 8), @p14='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Person] SET [Cpf] = @p0, [CreatedAt] = @p1, [Creator] = @p2, [DateOfBirth] = @p3, [Email] = @p4, [FirstName] = @p5, [Gender] = @p6, [LastName] = @p7, [PhoneNumber] = @p8, [UpdatedAt] = @p9, [Updater] = @p10, [Active] = @p11, [Admission] = @p12, [Code] = @p13, [Position] = @p14
+WHERE [Id] = @p15;
+SELECT @@ROWCOUNT;
+2021-02-24 11:08:18.896 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'GenericApp.Infra.Data.Context.GenericAppContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Cpf', table 'genericDb.dbo.Person'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:da81905b-0c55-4911-bcc3-1a2a04ee6825
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Cpf', table 'genericDb.dbo.Person'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:da81905b-0c55-4911-bcc3-1a2a04ee6825
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2021-02-24 11:08:24.866 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Update (GenericApp) in 11520.5524ms
+2021-02-24 11:08:24.867 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:08:26.781 -03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Cpf', table 'genericDb.dbo.Person'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:da81905b-0c55-4911-bcc3-1a2a04ee6825
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at GenericApp.Infra.Data.Context.GenericAppContext.SaveChanges() in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Infra.Data\Context\GenericAppContext.cs:line 50
+   at GenericApp.Infra.Data.UnitOfWork`1.SaveChanges() in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Infra.Data\UnitOfWork.cs:line 92
+   at GenericApp.Services.Base.BaseDbService`1.Update(TEntity obj) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Services\Services\Base\BaseDbService.cs:line 54
+   at GenericApp.Controllers.EmployeeController.Update(EmployeeVM employee) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp\Controllers\EmployeeController.cs:line 48
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at GenericApp.Infra.CC.Exceptions.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Infra.CC.Exception\Middleware\ExceptionMiddleware.cs:line 24
+2021-02-24 11:08:26.867 -03:00 [INF] Request finished in 13526.548ms 400 application/json
+2021-02-24 11:13:45.046 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Update application/json 595
+2021-02-24 11:13:45.046 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:13:45.047 -03:00 [INF] Route matched with {action = "Update", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 11:13:45.049 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 11:13:45.055 -03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2021-02-24 11:13:45.056 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Update (GenericApp) in 8.9242ms
+2021-02-24 11:13:45.057 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:13:45.060 -03:00 [INF] Request finished in 14.4479ms 400 application/problem+json; charset=utf-8
+2021-02-24 11:29:49.621 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-24 11:29:49.648 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/  
+2021-02-24 11:29:49.729 -03:00 [INF] Hosting environment: Development
+2021-02-24 11:29:49.731 -03:00 [INF] Content root path: D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp
+2021-02-24 11:29:49.791 -03:00 [INF] Request finished in 147.7834ms 404 
+2021-02-24 11:30:00.134 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Update application/json 595
+2021-02-24 11:30:00.155 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:30:00.219 -03:00 [INF] Route matched with {action = "Update", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 11:30:01.391 -03:00 [WRN] No type was specified for the decimal column 'Value' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-02-24 11:30:01.454 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 11:30:02.108 -03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2021-02-24 11:30:02.205 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Update (GenericApp) in 1977.4004ms
+2021-02-24 11:30:02.206 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:30:02.212 -03:00 [INF] Request finished in 2079.2237ms 400 application/problem+json; charset=utf-8
+2021-02-24 11:48:49.367 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-24 11:48:49.399 -03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44345/  
+2021-02-24 11:48:49.447 -03:00 [INF] Hosting environment: Development
+2021-02-24 11:48:49.448 -03:00 [INF] Content root path: D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp
+2021-02-24 11:48:49.509 -03:00 [INF] Request finished in 122.6464ms 404 
+2021-02-24 11:48:56.821 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44345/api/Employee/Update application/json 595
+2021-02-24 11:48:56.842 -03:00 [INF] Executing endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:48:56.918 -03:00 [INF] Route matched with {action = "Update", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(GenericApp.ViewModels.EmployeeVM) on controller GenericApp.Controllers.EmployeeController (GenericApp).
+2021-02-24 11:48:58.045 -03:00 [WRN] No type was specified for the decimal column 'Value' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-02-24 11:48:58.092 -03:00 [INF] Entity Framework Core 3.1.12 initialized 'GenericAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=GenericApp.Infra.Data.Migrations 
+2021-02-24 11:48:59.561 -03:00 [INF] Executed DbCommand (66ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Cpf], [p].[CreatedAt], [p].[Creator], [p].[DateOfBirth], [p].[Discriminator], [p].[Email], [p].[FirstName], [p].[Gender], [p].[LastName], [p].[PhoneNumber], [p].[UpdatedAt], [p].[Updater], [p].[Active], [p].[Admission], [p].[Code], [p].[CompanyId], [p].[Position]
+FROM [Person] AS [p]
+WHERE ([p].[Discriminator] = N'Employee') AND ([p].[Id] = @__p_0)
+2021-02-24 11:48:59.932 -03:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[@p10='?' (DbType = Int64), @p0='?' (Size = 15), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 30), @p4='?' (Size = 40), @p5='?' (Size = 15), @p6='?' (Size = 40), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [JuridicalPerson] SET [Cnpj] = @p0, [CreatedAt] = @p1, [Creator] = @p2, [Email] = @p3, [Name] = @p4, [PhoneNumber] = @p5, [PublicName] = @p6, [UpdatedAt] = @p7, [Updater] = @p8, [Active] = @p9
+WHERE [Id] = @p10;
+SELECT @@ROWCOUNT;
+2021-02-24 11:48:59.986 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'GenericApp.Infra.Data.Context.GenericAppContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Cnpj', table 'genericDb.dbo.JuridicalPerson'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:275c35c6-b81d-4cf0-a301-960b4529d029
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Cnpj', table 'genericDb.dbo.JuridicalPerson'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:275c35c6-b81d-4cf0-a301-960b4529d029
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2021-02-24 11:49:04.970 -03:00 [INF] Executed action GenericApp.Controllers.EmployeeController.Update (GenericApp) in 8045.26ms
+2021-02-24 11:49:04.972 -03:00 [INF] Executed endpoint 'GenericApp.Controllers.EmployeeController.Update (GenericApp)'
+2021-02-24 11:49:06.495 -03:00 [ERR] An error occurred while updating the entries. See the inner exception for details.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Cnpj', table 'genericDb.dbo.JuridicalPerson'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:275c35c6-b81d-4cf0-a301-960b4529d029
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at GenericApp.Infra.Data.Context.GenericAppContext.SaveChanges() in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Infra.Data\Context\GenericAppContext.cs:line 50
+   at GenericApp.Infra.Data.UnitOfWork`1.SaveChanges() in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Infra.Data\UnitOfWork.cs:line 92
+   at GenericApp.Services.Base.BaseDbService`1.Update(TEntity obj) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Services\Services\Base\BaseDbService.cs:line 54
+   at GenericApp.Controllers.EmployeeController.Update(EmployeeVM employee) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp\Controllers\EmployeeController.cs:line 48
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at GenericApp.Infra.CC.Exceptions.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\Public Documents\Projetos\GenericApp\GenericApp\GenericApp.Infra.CC.Exception\Middleware\ExceptionMiddleware.cs:line 24
+2021-02-24 11:49:06.590 -03:00 [INF] Request finished in 9769.6536ms 400 application/json
