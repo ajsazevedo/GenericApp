@@ -11,11 +11,9 @@ namespace GenericApp.Domain.Models
         public string PublicName { get; set; }
         [MaxLength(15)]
         public string Cnpj { get; set; }
-        [MaxLength(30)]
-        [EmailAddress]
+        [MaxLength(30), EmailAddress]
         public string Email { get; set; }
-        [MaxLength(15)]
-        [Phone]
+        [MaxLength(15), Phone]
         public string PhoneNumber { get; set; }
     }
 }

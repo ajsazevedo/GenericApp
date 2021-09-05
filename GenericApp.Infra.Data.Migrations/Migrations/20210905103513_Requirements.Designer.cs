@@ -4,14 +4,16 @@ using GenericApp.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GenericApp.Infra.Data.Migrations.Migrations
 {
     [DbContext(typeof(GenericAppContext))]
-    partial class GenericAppContextModelSnapshot : ModelSnapshot
+    [Migration("20210905103513_Requirements")]
+    partial class Requirements
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -210,7 +212,8 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
 
                     b.Property<string>("Password")
                         .HasColumnName("password")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(12)")
+                        .HasMaxLength(12);
 
                     b.Property<DateTime?>("PasswordValidDate")
                         .HasColumnName("password_valid_date")

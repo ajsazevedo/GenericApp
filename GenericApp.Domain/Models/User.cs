@@ -6,14 +6,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GenericApp.Domain.Models
 {
+    [Table("users")]
     public class User : BaseEntity
     {
-        [MaxLength(40)]
+        [Column("name"), MaxLength(40), Required]
         public string Name { get; set; }
-        [EmailAddress]
-        [MaxLength(30)]
+        [Column("email"), EmailAddress, MaxLength(30), Required]
         public string Email { get; set; }
-        [MaxLength(12)]
+        [Column("password")]
         public string Password { get; set; }
         [Column("active"), Required]
         public bool Active { get; set; }

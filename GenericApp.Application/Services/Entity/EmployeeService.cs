@@ -26,9 +26,12 @@ namespace GenericApp.Application.Services.Entity
 
         void CheckExistingCompany(ref EmployeeDto employee)
         {
-            var existingCompany = _unitOfWork.GetService<ICompanyService>().FindByCnpj(employee.Company.Cnpj);
-            if (existingCompany != null)
-                employee.Company = existingCompany;
+            if(employee.Company != null)
+            {
+                var existingCompany = _unitOfWork.GetService<ICompanyService>().FindByCnpj(employee.Company.Cnpj);
+                if (existingCompany != null)
+                    employee.Company = existingCompany;
+            }
         }
 
         public EmployeeDto FindByCpf(string cpf)

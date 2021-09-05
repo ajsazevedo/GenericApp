@@ -4,14 +4,16 @@ using GenericApp.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GenericApp.Infra.Data.Migrations.Migrations
 {
     [DbContext(typeof(GenericAppContext))]
-    partial class GenericAppContextModelSnapshot : ModelSnapshot
+    [Migration("20210905102816_tables")]
+    partial class Tables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,11 +57,11 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasColumnType("nvarchar(40)")
                         .HasMaxLength(40);
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnName("updated_at")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("creator_id")
+                    b.Property<long?>("creator_id")
                         .HasColumnType("bigint");
 
                     b.Property<long?>("updater_id")
@@ -91,7 +93,7 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                     b.Property<long>("CustomerId")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnName("updated_at")
                         .HasColumnType("datetime2");
 
@@ -99,7 +101,6 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<long?>("creator_id")
-                        .IsRequired()
                         .HasColumnType("bigint");
 
                     b.Property<long?>("updater_id")
@@ -158,12 +159,11 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasColumnType("nvarchar(15)")
                         .HasMaxLength(15);
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnName("updated_at")
                         .HasColumnType("datetime2");
 
                     b.Property<long?>("creator_id")
-                        .IsRequired()
                         .HasColumnType("bigint");
 
                     b.Property<long?>("updater_id")
@@ -210,7 +210,8 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
 
                     b.Property<string>("Password")
                         .HasColumnName("password")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(12)")
+                        .HasMaxLength(12);
 
                     b.Property<DateTime?>("PasswordValidDate")
                         .HasColumnName("password_valid_date")
@@ -220,12 +221,11 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasColumnName("role")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnName("updated_at")
                         .HasColumnType("datetime2");
 
                     b.Property<long?>("creator_id")
-                        .IsRequired()
                         .HasColumnType("bigint");
 
                     b.Property<long?>("updater_id")
@@ -309,8 +309,7 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                     b.HasOne("GenericApp.Domain.Models.User", "Creator")
                         .WithMany()
                         .HasForeignKey("creator_id")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("GenericApp.Domain.Models.User", "Updater")
                         .WithMany()
@@ -329,8 +328,7 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                     b.HasOne("GenericApp.Domain.Models.User", "Creator")
                         .WithMany()
                         .HasForeignKey("creator_id")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("GenericApp.Domain.Models.User", "Updater")
                         .WithMany()
@@ -343,8 +341,7 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                     b.HasOne("GenericApp.Domain.Models.User", "Creator")
                         .WithMany()
                         .HasForeignKey("creator_id")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("GenericApp.Domain.Models.User", "Updater")
                         .WithMany()
@@ -357,8 +354,7 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                     b.HasOne("GenericApp.Domain.Models.User", "Creator")
                         .WithMany()
                         .HasForeignKey("creator_id")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("GenericApp.Domain.Models.User", "Updater")
                         .WithMany()
