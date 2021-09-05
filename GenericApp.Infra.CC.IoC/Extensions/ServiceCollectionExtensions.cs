@@ -8,7 +8,26 @@ using System.Reflection;
 using GenericApp.Domain.Interfaces.Repositories.Base;
 using GenericApp.Infra.Data.Repositories.Base;
 using GenericApp.Domain.Interfaces.Services.Base;
-using GenericApp.Services.Base;
+using GenericApp.Application.Services.Base;
+using GenericApp.Infra.CC.Logging.Serilog;
+using Microsoft.Extensions.Configuration;
+using GenericApp.Infra.Common.Objects;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Serilog;
+using Microsoft.AspNetCore.Builder;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using GenericApp.Infra.CC.Security.Extensions;
+using GenericApp.Infra.Data.Interfaces;
+using GenericApp.Infra.CC.Interfaces;
+using GenericApp.Domain.Interfaces.Services;
+using GenericApp.Application.Services;
+using System;
+using GenericApp.Infra.CC.Localization.Resources;
+using System.Collections.Generic;
+using GenericApp.Infra.CC.Swagger.Extensions;
+using GenericApp.Infra.CC.Mapping.Extensions;
 
 namespace GenericApp.Infra.CC.IoC.Extensions
 {
@@ -18,44 +37,118 @@ namespace GenericApp.Infra.CC.IoC.Extensions
         {
             var startupParameters = DependencyInjectionStartup.SetParameters();
 
+            services.AddSingleton(startupParameters.EmailConfiguration.Get<EmailSettings>());
+            services.AddCommonServices(startupParameters.GeneralSettings);
+            services.AddWebServices();
+            services.AddJwtSecurity(startupParameters.TokenConfiguration);
             services.AddDataAccessServices(startupParameters.ConnectionString);
-            services.AddCommonServices();
-            //services.AddSingletonServices(startupParameters);
-            //services.AddTransientServices();
-            services.AddScopedServices();
-            //services.AddSingletonRepositories();
             services.AddScopedRepositories();
-            //services.AddTransientRepositories();
-            //services.AddWebServices(startupParameters.TokenConfiguration);
+            services.AddScopedServices();
+            services.AddSwaggerDocumentation();
+            services.AddMappingConfiguration();
         }
 
-        public static void AddDataAccessServices(this IServiceCollection services, string connectionString)
+        private static void AddCommonServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IUnitOfWork, UnitOfWork<GenericAppContext>>();
-            services.AddDbContext<GenericAppContext>(options => options.UseSqlServer(connectionString, b => b.MigrationsAssembly("GenericApp.Infra.Data.Migrations")))
-                .AddScoped<GenericAppContext, GenericAppContext>();
-        }
-        public static void AddCommonServices(this IServiceCollection services)
-        {
+            JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
             services.AddControllers().AddNewtonsoftJson(options =>
-                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            );
+            LoggerManager.ConfigureSerilog(configuration);
+            services.AddSingleton(Log.Logger);
+            services.AddLocalization(opt => opt.ResourcesPath = "Resources");
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new[]
+                {
+                    new CultureInfo("en-US"),
+                    new CultureInfo("pt-BR"),
+                    new CultureInfo("es"),
+                };
+
+                options.DefaultRequestCulture = new RequestCulture("en-US");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+            });
+        }
+
+        private static void AddWebServices(this IServiceCollection services)
+        {
+            services.AddCors();
+            services.AddMvc();
+            services.AddHttpClient();
+            services.AddHttpContextAccessor();
+        }
+
+        private static void AddDataAccessServices(this IServiceCollection services, string connectionString)
+        {
+            services.AddSingleton<IApplicationManager, ApplicationManager>();
+            services.AddScoped<IUnitOfWork, UnitOfWork<IGenericAppContext>>();
+            services.AddDbContext<GenericAppContext>(options => options
+            .UseSqlServer(connectionString, b => b.MigrationsAssembly("GenericApp.Infra.Data.Migrations")))
+                .AddScoped<IGenericAppContext, GenericAppContext>();
+        }
+
+        private static void AddScopedRepositories(this IServiceCollection services)
+        {
+            services.UseAllOfType(new[] { typeof(Repository).Assembly, typeof(IRepository).Assembly }, "Repository");
+        }
+
+        private static void AddScopedServices(this IServiceCollection services)
+        {
+            services.UseAllOfType(new[] { typeof(BaseService).Assembly, typeof(IBaseService).Assembly }, "Service");
+            services.AddSingleton<ITokenManagerService, TokenManagerService>();
+        }
+
+        private static void UseAllOfType(this IServiceCollection services, Assembly[] assemblies, string serviceType, ServiceLifetime lifetime = ServiceLifetime.Scoped)
+        {
+            services.AddDependenciesByNamingConvention(
+                assemblies,
+                x => x.Name.EndsWith(serviceType),
+                lifetime
             );
         }
-        public static void UseAllOfType<T>(this IServiceCollection serviceCollection, Assembly[] assemblies, ServiceLifetime lifetime = ServiceLifetime.Scoped)
-        {
-            var typesFromAssemblies = assemblies.SelectMany(a => a.DefinedTypes.Where(x => x.IsClass && x.GetInterfaces().Contains(typeof(T))));
-            foreach (var type in typesFromAssemblies)
-                serviceCollection.Add(new ServiceDescriptor(type, type, lifetime));
-        }
 
-        public static void AddScopedRepositories(this IServiceCollection services)
+        private static IServiceCollection AddDependenciesByNamingConvention(this IServiceCollection services, Assembly[] assemblies, Func<Type, bool> predicate, ServiceLifetime lifetime)
         {
-            services.UseAllOfType<IRepository>(new[] { typeof(Repository).Assembly });
-        }
+            var implementations = new List<Type>();
+            var interfaces = new List<Type>();
 
-        public static void AddScopedServices(this IServiceCollection services)
-        {
-            services.UseAllOfType<IBaseService>(new[] { typeof(BaseService).Assembly });
+            foreach (var assembly in assemblies)
+            {
+                implementations.AddRange(assembly.ExportedTypes
+                    .Where(x => !x.IsInterface && predicate(x)));
+                interfaces.AddRange(assembly.ExportedTypes
+                    .Where(x => x.IsInterface && predicate(x)));
+            }
+
+            foreach (var @interface in interfaces)
+            {
+                var implementation = implementations
+                    .FirstOrDefault(x => @interface.IsAssignableFrom(x)
+                        && $"I{x.Name}" == @interface.Name && !x.IsAbstract);
+
+                if (implementation == null)
+                    throw new InvalidOperationException(string.Format(SharedResource.CouldNotFindAnImplementationForTheInterface, @interface));
+
+                switch (lifetime)
+                {
+                    case ServiceLifetime.Singleton:
+                        services.AddSingleton(@interface, implementation);
+                        break;
+                    case ServiceLifetime.Scoped:
+                        services.AddScoped(@interface, implementation);
+                        break;
+                    default:
+                        services.AddTransient(@interface, implementation);
+                        break;
+                }
+            }
+
+            return services;
         }
     }
 }

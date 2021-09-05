@@ -1,25 +1,20 @@
-﻿using Flunt.Notifications;
+﻿using GenericApp.Domain.Interfaces;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace GenericApp.Domain.Models.Base
 {
-    public abstract class BaseEntity<TKeyType> : /*Notifiable<Notification>,*/ IEntity<TKeyType>
+    public abstract class BaseEntity : IEntity
     {
-        protected BaseEntity(TKeyType id = default)
+        protected BaseEntity(long id = default)
         {
             Id = id;
         }
         [Key]
-        public virtual TKeyType Id { get; set; }
+        public virtual long Id { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-        public string Creator { get; set; }
-        public string Updater { get; set; }
-
-        public Type GetIdType()
-        {
-            return typeof(TKeyType);
-        }
+        public User Creator { get; set; }
+        public User Updater { get; set; }
     }
 }

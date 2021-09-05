@@ -1,17 +1,15 @@
-﻿using AutoMapper;
-using GenericApp.Controllers.Base;
-using GenericApp.Domain.Interfaces.Services;
-using GenericApp.Domain.Models;
-using GenericApp.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using GenericApp.Controllers.Base;
+using GenericApp.Domain.Dto.Models;
+using GenericApp.Domain.Interfaces.Services.Entity;
+using GenericApp.Infra.Data.Interfaces;
+using Serilog;
 
 namespace GenericApp.Controllers
 {
-    public class CompanyController : BaseEntityController<Company, CompanyVM>
+    public class CompanyController : BaseEntityController<CompanyDto, ICompanyService>
     {
-        public CompanyController(ICompanyService service, ILogger<CompanyController> logger, IMapper mapper) 
-            : base(service, logger, mapper)
+        public CompanyController(ICompanyService service, ILogger logger, IUnitOfWork unitOfWork) 
+            : base(service, logger, unitOfWork)
         {
         }
     }

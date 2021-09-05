@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\GenericApp.Infra.CC.Logging\GenericApp.Infra.CC.Logging.Serilog.csproj" />
     <ProjectReference Include="..\GenericApp.Infra.Common\GenericApp.Infra.Common.csproj" />
+    <ProjectReference Include="..\GenericApp.Infra.Data\GenericApp.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

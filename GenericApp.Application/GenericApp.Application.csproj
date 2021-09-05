@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GenericApp.Domain\GenericApp.Domain.csproj" />
+    <ProjectReference Include="..\GenericApp.Infra.CC.Mapping\GenericApp.Infra.CC.Mapping.csproj" />
+    <ProjectReference Include="..\GenericApp.Infra.Data\GenericApp.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

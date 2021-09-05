@@ -1,11 +1,11 @@
-﻿using GenericApp.Domain.Enums;
+﻿using GenericApp.Infra.Common.Enums;
 using GenericApp.Domain.Models.Base;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace GenericApp.Domain.Models
 {
-    public abstract class Person : BaseEntity<long>
+    public abstract class Person : BaseEntity
     {
         [MaxLength(30)]
         public string FirstName { get; set; }
@@ -21,6 +21,5 @@ namespace GenericApp.Domain.Models
         public string PhoneNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Gender Gender { get; set; }
-
     }
 }

@@ -2,8 +2,14 @@
 {
     public class Result
     {
-        public bool Success { get; }
-        public string Message { get; }
+        public bool Success { get; set; }
+        public string Message { get; set; }
+
+        public Result()
+        {
+            Success = false;
+            Message = string.Empty;
+        }
 
         public Result(bool success, string message)
         {
@@ -65,7 +71,7 @@
 
         public static new Result<T> Failed(string message)
         {
-            return new Result<T>(false, default(T), message);
+            return new Result<T>(false, default, message);
         }
     }
 }

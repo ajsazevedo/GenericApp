@@ -15,7 +15,7 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.12")
+                .HasAnnotation("ProductVersion", "3.1.18")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -27,15 +27,14 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Cnpj")
-                        .IsRequired()
                         .HasColumnType("nvarchar(15)")
                         .HasMaxLength(15);
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Creator")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long?>("CreatorId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
@@ -46,7 +45,6 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasMaxLength(30);
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(40)")
                         .HasMaxLength(40);
 
@@ -55,17 +53,20 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasMaxLength(15);
 
                     b.Property<string>("PublicName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(40)")
                         .HasMaxLength(40);
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Updater")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long?>("UpdaterId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatorId");
+
+                    b.HasIndex("UpdaterId");
 
                     b.ToTable("JuridicalPerson");
 
@@ -82,8 +83,8 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Creator")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long?>("CreatorId")
+                        .HasColumnType("bigint");
 
                     b.Property<long>("CustomerId")
                         .HasColumnType("bigint");
@@ -91,15 +92,19 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Updater")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long?>("UpdaterId")
+                        .HasColumnType("bigint");
 
                     b.Property<decimal>("Value")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatorId");
+
                     b.HasIndex("CustomerId");
+
+                    b.HasIndex("UpdaterId");
 
                     b.ToTable("Order");
                 });
@@ -112,15 +117,14 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Cpf")
-                        .IsRequired()
                         .HasColumnType("nvarchar(11)")
                         .HasMaxLength(11);
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Creator")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long?>("CreatorId")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
@@ -130,12 +134,10 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
@@ -143,7 +145,6 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
@@ -154,14 +155,74 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Updater")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long?>("UpdaterId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatorId");
+
+                    b.HasIndex("UpdaterId");
 
                     b.ToTable("Person");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Person");
+                });
+
+            modelBuilder.Entity("GenericApp.Domain.Models.User", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Active")
+                        .HasColumnName("active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("CreatorId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(40)")
+                        .HasMaxLength(40);
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(12)")
+                        .HasMaxLength(12);
+
+                    b.Property<DateTime?>("PasswordValidDate")
+                        .HasColumnName("password_valid_date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Role")
+                        .HasColumnName("role")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("UpdaterId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatorId");
+
+                    b.HasIndex("Email")
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
+
+                    b.HasIndex("UpdaterId");
+
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("GenericApp.Domain.Models.Company", b =>
@@ -171,6 +232,10 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
 
+                    b.HasIndex("Cnpj")
+                        .IsUnique()
+                        .HasFilter("[Cnpj] IS NOT NULL");
+
                     b.ToTable("Company");
 
                     b.HasDiscriminator().HasValue("Company");
@@ -179,6 +244,10 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
             modelBuilder.Entity("GenericApp.Domain.Models.Customer", b =>
                 {
                     b.HasBaseType("GenericApp.Domain.Models.Person");
+
+                    b.HasIndex("Cpf")
+                        .IsUnique()
+                        .HasFilter("[Cpf] IS NOT NULL");
 
                     b.ToTable("Customer");
 
@@ -196,7 +265,6 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Code")
-                        .IsRequired()
                         .HasColumnType("nvarchar(8)")
                         .HasMaxLength(8);
 
@@ -204,23 +272,76 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Position")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasIndex("CompanyId");
+
+                    b.HasIndex("Cpf")
+                        .IsUnique()
+                        .HasName("IX_Person_Cpf1")
+                        .HasFilter("[Cpf] IS NOT NULL");
 
                     b.ToTable("Employee");
 
                     b.HasDiscriminator().HasValue("Employee");
                 });
 
+            modelBuilder.Entity("GenericApp.Domain.Models.JuridicalPerson", b =>
+                {
+                    b.HasOne("GenericApp.Domain.Models.User", "Creator")
+                        .WithMany()
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("GenericApp.Domain.Models.User", "Updater")
+                        .WithMany()
+                        .HasForeignKey("UpdaterId")
+                        .OnDelete(DeleteBehavior.NoAction);
+                });
+
             modelBuilder.Entity("GenericApp.Domain.Models.Order", b =>
                 {
+                    b.HasOne("GenericApp.Domain.Models.User", "Creator")
+                        .WithMany()
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
                     b.HasOne("GenericApp.Domain.Models.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
+
+                    b.HasOne("GenericApp.Domain.Models.User", "Updater")
+                        .WithMany()
+                        .HasForeignKey("UpdaterId")
+                        .OnDelete(DeleteBehavior.NoAction);
+                });
+
+            modelBuilder.Entity("GenericApp.Domain.Models.Person", b =>
+                {
+                    b.HasOne("GenericApp.Domain.Models.User", "Creator")
+                        .WithMany()
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("GenericApp.Domain.Models.User", "Updater")
+                        .WithMany()
+                        .HasForeignKey("UpdaterId")
+                        .OnDelete(DeleteBehavior.NoAction);
+                });
+
+            modelBuilder.Entity("GenericApp.Domain.Models.User", b =>
+                {
+                    b.HasOne("GenericApp.Domain.Models.User", "Creator")
+                        .WithMany()
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("GenericApp.Domain.Models.User", "Updater")
+                        .WithMany()
+                        .HasForeignKey("UpdaterId")
+                        .OnDelete(DeleteBehavior.NoAction);
                 });
 
             modelBuilder.Entity("GenericApp.Domain.Models.Employee", b =>
@@ -228,7 +349,7 @@ namespace GenericApp.Infra.Data.Migrations.Migrations
                     b.HasOne("GenericApp.Domain.Models.Company", "Company")
                         .WithMany("Employees")
                         .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

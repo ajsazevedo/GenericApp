@@ -10,6 +10,11 @@ namespace GenericApp.Infra.Common.Exceptions
         {
         }
 
+        public ServiceException(string message) : base(message)
+        {
+            FriendlyMessage = message;
+        }
+
         public ServiceException(string message, string friendlyMessage = null) : base(message)
         {
             FriendlyMessage = friendlyMessage;
@@ -24,6 +29,7 @@ namespace GenericApp.Infra.Common.Exceptions
         public ServiceException(string message, Exception innerException)
              : base(message, innerException)
         {
+            FriendlyMessage = message;
         }
     }
 }

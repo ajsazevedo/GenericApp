@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>Acesso Negado!</value>
+  </data>
+  <data name="AlreadyRegistered" xml:space="preserve">
+    <value>{0} já possui cadastro!</value>
+  </data>
+  <data name="CannotConnectToDatabase" xml:space="preserve">
+    <value>Ocorreu um erro enquanto estabelecia conexão ao servidor de banco de dados.</value>
+  </data>
+  <data name="CannotDeleteReferencedRecord" xml:space="preserve">
+    <value>Não é possível deletar um registro referenciado.</value>
+  </data>
+  <data name="CannotInsertDuplicatedRow" xml:space="preserve">
+    <value>Não é possível inserir uma linha duplicada.</value>
+  </data>
+  <data name="CannotMapNullDto" xml:space="preserve">
+    <value>Dto a ser mapeado esta nulo.</value>
+  </data>
+  <data name="CouldNotDeliverTheEmail" xml:space="preserve">
+    <value>Não foi possível enviar o e-mail.</value>
+  </data>
+  <data name="CouldNotFindAnImplementationForTheInterface" xml:space="preserve">
+    <value>Não foi possível encontrar uma implementação para a interface {0}.</value>
+  </data>
+  <data name="CouldntConnectToAzureServer" xml:space="preserve">
+    <value>Não foi possível se conectar ao servidor da Azure.</value>
+  </data>
+  <data name="DatabaseServerUnreacheble" xml:space="preserve">
+    <value>Ocorreu um erro enquanto estabelecia conexão ao servidor de banco de dados.</value>
+  </data>
+  <data name="DataInputNotFound" xml:space="preserve">
+    <value>Dados para {0} não estão preenchidos</value>
+  </data>
+  <data name="DeletedRecord" xml:space="preserve">
+    <value>Registro removido.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ExpiredPassword" xml:space="preserve">
+    <value>Senha expirada.</value>
+  </data>
+  <data name="FailedToGenerateEmbed" xml:space="preserve">
+    <value>No se pudo generar el token para el recurso.</value>
+  </data>
+  <data name="FieldMustBeInformed" xml:space="preserve">
+    <value>Campo {0} deve ser informado.</value>
+  </data>
+  <data name="FileNotAllowed" xml:space="preserve">
+    <value>Arquivo não permitido. Somente {0} são permitidos!</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>{0} inativo</value>
+  </data>
+  <data name="InvalidDateArgument" xml:space="preserve">
+    <value>Argumento de fechas no válidas.</value>
+  </data>
+  <data name="InvalidField" xml:space="preserve">
+    <value>Campo {0} está inválido(a).</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Senha incorreta.</value>
+  </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Token Inválido!</value>
+  </data>
+  <data name="InvalidUserOrPassword" xml:space="preserve">
+    <value>Usuário ou senha inválido(s)</value>
+  </data>
+  <data name="IsNotPossibleToAddRLSWithoutExistingReport" xml:space="preserve">
+    <value>Não é possível adicionar Role Level Security sem relatório existente.</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="MustBeValidMailAddress" xml:space="preserve">
+    <value>Deve ser um endereço de e-mail válido.</value>
+  </data>
+  <data name="NewPasswordMail" xml:space="preserve">
+    <value>Este e-mail foi enviado pela VOLVO. Por favor, não responda.&lt;br /&gt;&lt;br /&gt;Sua nova senha é: &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data name="NewPasswordSubject" xml:space="preserve">
+    <value>Nova senha para o sistema Volvo Labi</value>
+  </data>
+  <data name="NoReportsInWorkspace" xml:space="preserve">
+    <value>Nenhum relatório foi encontrado no espaço de trabalho.</value>
+  </data>
+  <data name="NoReportWithGivenIdInWorkspace" xml:space="preserve">
+    <value>Nenhum relatório foi encontrado na área de trabalho com o ID inserido. Verifique se o ID é válido.</value>
+  </data>
+  <data name="NotAValidVigentPeriod" xml:space="preserve">
+    <value>{0} não tem período de vigência válido.</value>
+  </data>
+  <data name="NotCreated" xml:space="preserve">
+    <value>{0} não foi inserido(a)</value>
+  </data>
+  <data name="NotDeleted" xml:space="preserve">
+    <value>{0} não foi excluido(a)!</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>{0} não localizado</value>
+  </data>
+  <data name="NotUpdated" xml:space="preserve">
+    <value>{0} não foi atualizado(a)</value>
+  </data>
+  <data name="ObjectToBeRemovedDoesNotExists" xml:space="preserve">
+    <value>Objeto a ser removido não existe.</value>
+  </data>
+  <data name="ObjectToBeUpdatedDoesNotExists" xml:space="preserve">
+    <value>Objeto a ser atualizado não existe.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="PasswordMustBeBetween6And10" xml:space="preserve">
+    <value>A senha deve conter entre 6 e 10 caracteres</value>
+  </data>
+  <data name="PasswordMustContainLettersAndNumbers" xml:space="preserve">
+    <value>A senha deve conter letras e números.</value>
+  </data>
+  <data name="PasswordReseted" xml:space="preserve">
+    <value>Senha resetada com sucesso.</value>
+  </data>
+  <data name="PasswordUpdated" xml:space="preserve">
+    <value>Senha alterada com sucesso.</value>
+  </data>
+  <data name="PictureWithSizeAboveMaximum" xml:space="preserve">
+    <value>Foto com tamanho {0} bytes e tamanho máxmimo é de {1} bytes!</value>
+  </data>
+  <data name="RecordCreated" xml:space="preserve">
+    <value>Registro criado.</value>
+  </data>
+  <data name="RecordNotFound" xml:space="preserve">
+    <value>Registro não encontrado</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Relatório</value>
+  </data>
+  <data name="RequestCouldNotBeProcessed" xml:space="preserve">
+    <value>A requisição não pode ser processada.</value>
+  </data>
+  <data name="ResponseCodeNotIdentified" xml:space="preserve">
+    <value>Código de resposta não identificado.</value>
+  </data>
+  <data name="SuccessfullyGeneratedToken" xml:space="preserve">
+    <value>Token gerado com sucesso.</value>
+  </data>
+  <data name="TheFieldIsNotEqualTo" xml:space="preserve">
+    <value>O campo {0} não é correspondente ao {1} informado!</value>
+  </data>
+  <data name="ThereIsAnotherRecordWithSameValues" xml:space="preserve">
+    <value>Já existe registro com as mesmas informações</value>
+  </data>
+  <data name="ThereIsARecordWithThis" xml:space="preserve">
+    <value>Já existe um(a) {0} cadastrado com este {1}!</value>
+  </data>
+  <data name="TypeMustBeSerializable" xml:space="preserve">
+    <value>O tipo deve ser serializavel.</value>
+  </data>
+  <data name="UnauthorizedAccess" xml:space="preserve">
+    <value>Acesso não autorizado.</value>
+  </data>
+  <data name="UnexpectedErrorTryAgain" xml:space="preserve">
+    <value>Houve um erro inesperado, favor tentar novamente!</value>
+  </data>
+  <data name="UnexpectedFailureOccurred" xml:space="preserve">
+    <value>Ocorreu uma falha inesperada.&lt;br&gt;Entre em contato com a administração do sistema.</value>
+  </data>
+  <data name="UpdatedRecord" xml:space="preserve">
+    <value>Registro atualizado.</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Usuário</value>
+  </data>
+  <data name="UserNotRegistered" xml:space="preserve">
+    <value>Usuário não cadastrado no sistema. Favor solicitar acesso ao administrador.</value>
+  </data>
+  <data name="ValueMustBeBetween" xml:space="preserve">
+    <value>O valor para {0} deve esta entre {1} a {2}</value>
+  </data>
+</root>

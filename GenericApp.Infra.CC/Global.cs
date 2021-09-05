@@ -1,4 +1,6 @@
-﻿namespace GenericApp.Infra.CC
+﻿using Microsoft.Extensions.Configuration;
+
+namespace GenericApp.Infra.CC
 {
     public class Global
     {
@@ -31,6 +33,42 @@
         public string GetConnectionString()
         {
             return ConnectionString;
+        }
+
+        private IConfigurationSection EmailConfiguration;
+
+        public void SetEmailConfiguration(IConfigurationSection value)
+        {
+            EmailConfiguration = value;
+        }
+
+        public IConfigurationSection GetEmailConfiguration()
+        {
+            return EmailConfiguration;
+        }
+
+        private IConfigurationSection TokenConfiguration;
+
+        public void SetTokenConfiguration(IConfigurationSection value)
+        {
+            TokenConfiguration = value;
+        }
+
+        public IConfigurationSection GetTokenConfiguration()
+        {
+            return TokenConfiguration;
+        }
+
+        private IConfiguration GeneralSettings;
+
+        public void SetConfigurationFile(IConfiguration value)
+        {
+            GeneralSettings = value;
+        }
+
+        public IConfiguration GetConfigurationFile()
+        {
+            return GeneralSettings;
         }
     }
 }

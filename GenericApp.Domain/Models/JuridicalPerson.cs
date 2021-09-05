@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GenericApp.Domain.Models
 {
-    public abstract class JuridicalPerson : BaseEntity<long>
+    public abstract class JuridicalPerson : BaseEntity
     {
         [MaxLength(40)]
         public string Name { get; set; }

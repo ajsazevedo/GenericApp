@@ -1,18 +1,16 @@
-﻿using Flunt.Notifications;
-using GenericApp.Domain.Models;
-using GenericApp.Domain.Models.Base;
+﻿using GenericApp.Domain.Models;
+using GenericApp.Infra.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Linq;
 
 namespace GenericApp.Infra.Data.Context
 {
-    public class GenericAppContext : DbContext
+    public class GenericAppContext : DbContext, IGenericAppContext
     {
         public GenericAppContext(DbContextOptions<GenericAppContext> options) : base(options)
         {
         }
-
+        public DbSet<User> User { get; set; }
         public DbSet<Person> Person { get; set; }
         public DbSet<JuridicalPerson> JuridicalPerson { get; set; }
         public DbSet<Order> Order { get; set; }
@@ -20,34 +18,44 @@ namespace GenericApp.Infra.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Ignore<Notification>();
-            modelBuilder.Entity<Employee>();//.ToTable("Employee");
-            modelBuilder.Entity<Order>();
-            modelBuilder.Entity<Customer>()/*.ToTable("Customer")*/.HasMany(c => c.Orders).WithOne(o => o.Customer)
-                .IsRequired().OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<Company>()/*.ToTable("Company")*/.HasMany(c => c.Employees).WithOne(e => e.Company)
-                .IsRequired().OnDelete(DeleteBehavior.Cascade);
-        }
-
-        public override int SaveChanges()
-        {
-            var entries = ChangeTracker
-                .Entries()
-                .Where(e => e.Entity is BaseEntity<long> && (
-                        e.State == EntityState.Added
-                        || e.State == EntityState.Modified));
-
-            foreach (var entityEntry in entries)
+            modelBuilder.Entity<Employee>(u =>
             {
-                ((BaseEntity<long>)entityEntry.Entity).UpdatedAt = DateTime.Now;
+                u.HasIndex(e => e.Cpf).IsUnique();
+                u.HasOne(e => e.Creator);
+                u.HasOne(e => e.Updater);
+            });
+            modelBuilder.Entity<Order>(u =>
+            {
+                u.HasOne(e => e.Creator);
+                u.HasOne(e => e.Updater);
+            });
+            modelBuilder.Entity<User>(u =>
+            {
+                u.HasIndex(e => e.Email).IsUnique();
+                u.HasOne(e => e.Creator);
+                u.HasOne(e => e.Updater);
+            });
+            modelBuilder.Entity<Customer>(u =>
+            {
+                u.HasIndex(e => e.Cpf).IsUnique();
+                u.HasMany(c => c.Orders).WithOne(o => o.Customer)
+                .IsRequired();
+                u.HasOne(e => e.Creator);
+                u.HasOne(e => e.Updater);
+            });
+            modelBuilder.Entity<Company>(u =>
+            {
+                u.HasIndex(e => e.Cnpj).IsUnique();
+                u.HasMany(c => c.Employees).WithOne(e => e.Company)
+                .IsRequired();
+                u.HasOne(e => e.Creator);
+                u.HasOne(e => e.Updater);
+            });
 
-                if (entityEntry.State == EntityState.Added)
-                {
-                    ((BaseEntity<long>)entityEntry.Entity).CreatedAt = DateTime.Now;
-                }
+            foreach (var foreingKey in modelBuilder.Model.GetEntityTypes().SelectMany(x => x.GetForeignKeys()))
+            {
+                foreingKey.DeleteBehavior = DeleteBehavior.NoAction;
             }
-
-            return base.SaveChanges();
         }
     }
 }

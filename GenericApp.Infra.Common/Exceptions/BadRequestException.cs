@@ -10,6 +10,11 @@ namespace GenericApp.Infra.Common.Exceptions
         {
         }
 
+        public BadRequestException(string message) : base(message)
+        {
+            FriendlyMessage = message;
+        }
+
         public BadRequestException(string message, string friendlyMessage = null) : base(message)
         {
             FriendlyMessage = friendlyMessage;
