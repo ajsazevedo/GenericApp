@@ -196,10 +196,10 @@
     <value>Deve ser um endereço de e-mail válido.</value>
   </data>
   <data name="NewPasswordMail" xml:space="preserve">
-    <value>Este e-mail foi enviado pela VOLVO. Por favor, não responda.&lt;br /&gt;&lt;br /&gt;Sua nova senha é: &lt;b&gt;{0}&lt;/b&gt;</value>
+    <value>Este e-mail foi enviado pela Application. Por favor, não responda.&lt;br /&gt;&lt;br /&gt;Sua nova senha é: &lt;b&gt;{0}&lt;/b&gt;</value>
   </data>
   <data name="NewPasswordSubject" xml:space="preserve">
-    <value>Nova senha para o sistema Volvo Labi</value>
+    <value>Nova senha para o sistema Generic App</value>
   </data>
   <data name="NoReportsInWorkspace" xml:space="preserve">
     <value>Nenhum relatório foi encontrado no espaço de trabalho.</value>

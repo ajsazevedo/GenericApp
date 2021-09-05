@@ -15,12 +15,12 @@ namespace GenericApp.Infra.CC.Swagger.Extensions
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Labi API",
-                    Version = "v1.00.12",
-                    Description = "Endpoints Labi Volvo",
+                    Title = "Generic App API",
+                    Version = "v0.10.00",
+                    Description = "Endpoints for apps",
                     Contact = new OpenApiContact
                     {
-                        Name = "Volvo Labi",
+                        Name = "Generic App",
                         Email = ""
                     }
                 });
@@ -63,7 +63,7 @@ namespace GenericApp.Infra.CC.Swagger.Extensions
         public static IApplicationBuilder UseSwaggerDocumentation(this IApplicationBuilder app)
         {
             var option = new RewriteOptions();
-            option.AddRedirect("^$", "api/labi/swagger");
+            option.AddRedirect("^$", "api/generic/swagger");
             app.UseRewriter(option);
 
             app.UseSwagger(options =>
@@ -76,8 +76,8 @@ namespace GenericApp.Infra.CC.Swagger.Extensions
             });
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Labi API v1.00.00");
-                c.RoutePrefix = "api/labi/swagger";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Generic App v0.10.00");
+                c.RoutePrefix = "api/generic/swagger";
             });
 
             return app;

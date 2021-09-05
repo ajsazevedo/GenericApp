@@ -295,7 +295,7 @@ namespace GenericApp.Infra.CC.Localization.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This e-mail has been sent by VOLVO. Please do not reply.&lt;br /&gt;&lt;br /&gt;Your new password is: &lt;b&gt;{0}&lt;/b&gt;.
+        ///   Looks up a localized string similar to This e-mail has been sent by Application. Please do not reply.&lt;br /&gt;&lt;br /&gt;Your new password is: &lt;b&gt;{0}&lt;/b&gt;.
         /// </summary>
         public static string NewPasswordMail {
             get {
@@ -304,7 +304,7 @@ namespace GenericApp.Infra.CC.Localization.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New password for Volvo Labi System.
+        ///   Looks up a localized string similar to New password for Generic App.
         /// </summary>
         public static string NewPasswordSubject {
             get {
