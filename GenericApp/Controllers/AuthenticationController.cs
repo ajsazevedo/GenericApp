@@ -26,14 +26,14 @@ namespace GenericApp.Controllers
         [HttpPost("[action]")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
-        public IActionResult Authenticate([FromBody] CredencialsDto credentials)
+        public IActionResult Authenticate([FromBody] CredentialsDto credentials)
         {
             return Ok(_service.Authenticate<LoginValidator>(credentials));
         }
 
         [AllowAnonymous]
         [HttpPost("[action]")]
-        public IActionResult ChangePassword([FromBody] ChangeCredencialsDto credencials)
+        public IActionResult ChangePassword([FromBody] ChangeCredentialsDto credencials)
         {
             return Ok(_service.ChangePassword(credencials));
         }

@@ -8,8 +8,8 @@ namespace GenericApp.Domain.Interfaces.Services
 {
     public interface IAuthenticationService : IBaseService
     {
-        AuthenticationResultDto Authenticate<Validator>(CredencialsDto userLogin) where Validator : AbstractValidator<CredencialsDto>;
-        Result ChangePassword(ChangeCredencialsDto credencials);
+        AuthenticationResultDto Authenticate<Validator>(CredentialsDto credentials) where Validator : AbstractValidator<CredentialsDto>;
+        Result ChangePassword(ChangeCredentialsDto credentials);
         Result ResetPassword(string username);
     }
 }

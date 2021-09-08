@@ -24,9 +24,9 @@ namespace GenericApp.Application.Services
             _userService = userService;
         }
 
-        public AuthenticationResultDto Authenticate<Validator>(CredencialsDto userLogin) where Validator : AbstractValidator<CredencialsDto>
+        public AuthenticationResultDto Authenticate<Validator>(CredentialsDto credentials) where Validator : AbstractValidator<CredentialsDto>
         {
-            var user = _userService.FindByLogin(userLogin);
+            var user = _userService.FindByLogin(credentials);
             if (user.IsPasswordValid())
             {
                 var token = _tokenManagerService.GenerateToken(_tokenManagerService.CreateIdentity(user));
@@ -50,9 +50,9 @@ namespace GenericApp.Application.Services
             };
         }
 
-        public Result ChangePassword(ChangeCredencialsDto credencials)
+        public Result ChangePassword(ChangeCredentialsDto credentials)
         {
-            return _userService.ChangePassword(credencials);
+            return _userService.ChangePassword(credentials);
         }
 
         public Result ResetPassword(string username)

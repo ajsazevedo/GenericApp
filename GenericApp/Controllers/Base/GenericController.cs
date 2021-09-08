@@ -4,7 +4,7 @@ using Serilog;
 
 namespace GenericApp.Controllers.Base
 {
-    [Authorize, ApiController, Route("api/[controller]")]
+    [/*Authorize, */ApiController, Route("api/[controller]")]
     public class GenericController : ControllerBase
     {
         protected readonly ILogger _logger;

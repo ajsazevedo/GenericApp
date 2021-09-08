@@ -7,9 +7,9 @@ namespace GenericApp.Domain.Interfaces.Services.Entity
 {
     public interface IUserService : IBaseDbService<UserDto>
     {
-        UserDto FindByLogin(CredencialsDto userLogin);
+        UserDto FindByLogin(CredentialsDto credentials);
         Result SetDefaultPassword(string username);
-        Result ChangePassword(ChangeCredencialsDto credencials);
+        Result ChangePassword(ChangeCredentialsDto credentials);
         UserDto FindById(long id);
     }
 }

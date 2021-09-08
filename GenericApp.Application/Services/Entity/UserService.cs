@@ -114,11 +114,11 @@ namespace GenericApp.Application.Services.Entity
             return user;
         }
 
-        public UserDto FindByLogin(CredencialsDto userLogin)
+        public UserDto FindByLogin(CredentialsDto credentials)
         {
-            var user = FindByUsername(userLogin.Login);
+            var user = FindByUsername(credentials.Username);
 
-            if (user.Password != EncryptPassword(userLogin.Password))
+            if (user.Password != EncryptPassword(credentials.Password))
                 throw new ServiceException(SharedResource.InvalidPassword);
 
             if (!user.Active)
@@ -127,10 +127,10 @@ namespace GenericApp.Application.Services.Entity
             return user;
         }
 
-        public Result ChangePassword(ChangeCredencialsDto credencials)
+        public Result ChangePassword(ChangeCredentialsDto credentials)
         {
-            var user = FindByLogin(credencials);
-            user.Password = EncryptPassword(credencials.NewPassword);
+            var user = FindByLogin(credentials);
+            user.Password = EncryptPassword(credentials.NewPassword);
             user.PasswordValidDate = DateTime.Now.AddMonths(GetMonthsToExpirePassword());
             base.Update(user.Id, user);
             return Result.Successfull(SharedResource.PasswordUpdated);

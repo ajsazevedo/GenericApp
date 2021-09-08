@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace GenericApp.Application.Validators
 {
-    public class LoginValidator : AbstractValidator<CredencialsDto>
+    public class LoginValidator : AbstractValidator<CredentialsDto>
     {
         public LoginValidator()
         {
@@ -17,11 +17,11 @@ namespace GenericApp.Application.Validators
                     throw new ArgumentException(SharedResource.ObjectMustNotBeNull, SharedResource.Login);
                 });
 
-            RuleFor(c => c.Login)
+            RuleFor(c => c.Username)
                .NotEmpty().NotNull()
                .WithMessage(string.Format(SharedResource.FieldMustBeInformed, SharedResource.Email));
 
-            RuleFor(c => c.Login)
+            RuleFor(c => c.Username)
                 .EmailAddress()
                 .WithMessage(SharedResource.MustBeValidMailAddress);
 
